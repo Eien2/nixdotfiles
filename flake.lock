@@ -9,12 +9,16 @@
       "locked": {
         "lastModified": 1753592768,
         "narHash": "sha256-oV695RvbAE4+R9pcsT9shmp6zE/+IZe6evHWX63f2Qg=",
-        "type": "tarball",
-        "url": "https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz"
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "fc3add429f21450359369af74c2375cb34a2d204",
+        "type": "github"
       },
       "original": {
-        "type": "tarball",
-        "url": "https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz"
+        "owner": "nix-community",
+        "ref": "release-25.05",
+        "repo": "home-manager",
+        "type": "github"
       }
     },
     "nixpkgs": {

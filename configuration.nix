@@ -3,15 +3,16 @@
   lib,
   pkgs,
   inputs,
+  hostname,
+  username,
+  dotfiles,
+  stateVersion,
   ...
 }:
-let
-  # home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz";
-in
 {
   imports = [
     /etc/nixos/hardware-configuration.nix
-    # (import "${home-manager}/nixos")
+    inputs.home-manager.nixosModules.default
   ];
 
   time.timeZone = "Europe/Warsaw";
@@ -26,11 +27,11 @@ in
     useUserPackages = true;
     useGlobalPkgs = true;
     backupFileExtension = "backup";
-    users.eien = import ./home.nix;
+    users.${username} = import ./home.nix;
   };
 
   networking = {
-    hostName = "nixos";
+    hostName = "${hostname}";
     networkmanager.enable = true;
   };
 
@@ -47,7 +48,7 @@ in
     };
   };
 
-  users.users.eien = {
+  users.users.${username} = {
     isNormalUser = true;
     extraGroups = [
       "wheel"
@@ -91,7 +92,7 @@ in
     xkb.options = "eurosign:e";
     windowManager.i3 = {
       enable = true;
-      configFile = "/home/eien/dotfiles/i3/config";
+      configFile = "${dotfiles}/i3/config";
       extraPackages = with pkgs; [
         i3lock
       ];
@@ -123,7 +124,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    # home-manager
+    home-manager
     libmtp
     gvfs
     xclip
@@ -170,5 +171,5 @@ in
     pyright
   ];
 
-  system.stateVersion = "25.05";
+  system.stateVersion = stateVersion;
 }
