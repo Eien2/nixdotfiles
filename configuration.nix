@@ -4,14 +4,14 @@
   pkgs,
   inputs,
   hostname,
-  username,
+  user,
   dotfiles,
   stateVersion,
   ...
 }:
 {
   imports = [
-    /etc/nixos/hardware-configuration.nix
+    ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
   ];
 
@@ -22,12 +22,14 @@
     "nix-command"
     "flakes"
   ];
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
 
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
     backupFileExtension = "backup";
-    users.${username} = import ./home.nix;
+    users.${user} = import ./home.nix;
   };
 
   networking = {
@@ -38,21 +40,24 @@
   hardware = {
     bluetooth.enable = true;
     bluetooth.powerOnBoot = true;
-    nvidia.open = false;
+    nvidia = {
+      open = false;
+      modesetting.enable = true;
+    };
+    opengl = {
+      enable = true;
+    };
     graphics = {
       enable = true;
-      extraPackages = with pkgs; [
-        nvidia-container-toolkit
-        vulkan-loader
-      ];
     };
   };
 
-  users.users.${username} = {
+  users.users.${user} = {
     isNormalUser = true;
     extraGroups = [
       "wheel"
       "audio"
+      "libvirtd"
     ];
     packages = with pkgs; [
       tree
@@ -92,7 +97,6 @@
     xkb.options = "eurosign:e";
     windowManager.i3 = {
       enable = true;
-      configFile = "${dotfiles}/i3/config";
       extraPackages = with pkgs; [
         i3lock
       ];
@@ -115,7 +119,7 @@
   programs.i3lock.enable = true;
   programs.dconf = {
     enable = true;
-    packages = with pkgs; [ ibus ];
+    packages = [ pkgs.ibus ];
   };
 
   nixpkgs = {
@@ -124,24 +128,22 @@
   };
 
   environment.systemPackages = with pkgs; [
+    vulkan-tools
+    vulkan-loader
+    glxinfo
+    vulkan-validation-layers
+    libglvnd
     home-manager
-    libmtp
+    neovim
     gvfs
-    xclip
-    fastfetch
     unzip
-    lf
     picom
     polybar
-    tmux
     kitty
-    rofi
     feh
-    stow
     autorandr
     vim
     wget
-    neovim
     lazygit
     git
     gcc
@@ -150,25 +152,6 @@
     gnumake
     python314
     go
-    lua-language-server
-    stylua
-    vscode-langservers-extracted
-    typescript-language-server
-    vim-language-server
-    tailwindcss-language-server
-    prettierd
-    black
-    bash-language-server
-    eslint_d
-    pylint
-    vscode-extensions.denoland.vscode-deno
-    nixd
-    nixfmt-rfc-style
-    isort
-    pretty-php
-    marksman
-    emmet-language-server
-    pyright
   ];
 
   system.stateVersion = stateVersion;

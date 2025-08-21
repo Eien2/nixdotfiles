@@ -1,19 +1,22 @@
 {
   config,
   pkgs,
-  inputs,
-  username,
-  homedir,
-  homeStateVersion,
   ...
 }:
 {
   home = {
-    username = username;
-    homeDirectory = homedir;
-    stateVersion = homeStateVersion;
+    username = "eien";
+    homeDirectory = "/home/eien";
+    stateVersion = "25.05";
 
     packages = with pkgs; [
+      xclip
+      rofi
+      tmux
+      lf
+      fastfetch
+      stow
+      blueberry
       flatpak
       lazygit
       nautilus
@@ -24,6 +27,25 @@
       killall
       chafa
       bat
+      lua-language-server
+      stylua
+      vscode-langservers-extracted
+      typescript-language-server
+      vim-language-server
+      tailwindcss-language-server
+      prettierd
+      black
+      bash-language-server
+      eslint_d
+      pylint
+      vscode-extensions.denoland.vscode-deno
+      nixd
+      nixfmt-rfc-style
+      isort
+      pretty-php
+      marksman
+      emmet-language-server
+      pyright
     ];
   };
 
@@ -47,6 +69,7 @@
       export DISPLAY=:0.0
       export MONITOR=DVI-D-1
       export EDITOR=neovim
+      export PATH="$HOME/bin:$PATH"
     '';
   };
 
@@ -82,7 +105,7 @@
       set -g window-status-current-format "#[fg=#708090] #W"
 
       set -g allow-passthrough on
-      set -g @resurrect-processes 'lazygit nvim snvim lf cmus bluetoothctl'
+      set -g @resurrect-processes 'lazygit nvim snvim lf cmus'
       set -g @resurrect-capture-pane-contents 'on'
       set -g @continuum-restore 'on'
       set -g @continuum-save-interval '1'
