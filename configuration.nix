@@ -2,17 +2,13 @@
   config,
   lib,
   pkgs,
-  inputs,
   hostname,
   user,
-  dotfiles,
-  stateVersion,
   ...
 }:
 {
   imports = [
     ./hardware-configuration.nix
-    inputs.home-manager.nixosModules.default
   ];
 
   time.timeZone = "Europe/Warsaw";
@@ -24,13 +20,6 @@
   ];
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
-
-  home-manager = {
-    useUserPackages = true;
-    useGlobalPkgs = true;
-    backupFileExtension = "backup";
-    users.${user} = import ./home.nix;
-  };
 
   networking = {
     hostName = "${hostname}";
@@ -90,17 +79,14 @@
   };
   services.xserver = {
     enable = true;
+    autoRepeatDelay = 200;
+    autoRepeatInterval = 35;
+    windowManager.i3.enable = true;
+    xkb.layout = "us";
+    xkb.options = "eurosign:e";
     videoDrivers = [
       "nvidia"
     ];
-    xkb.layout = "us";
-    xkb.options = "eurosign:e";
-    windowManager.i3 = {
-      enable = true;
-      extraPackages = with pkgs; [
-        i3lock
-      ];
-    };
   };
   services.gvfs.enable = true;
   services.udisks2.enable = true;
@@ -154,5 +140,5 @@
     go
   ];
 
-  system.stateVersion = stateVersion;
+  system.stateVersion = "25.05";
 }

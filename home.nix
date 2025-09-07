@@ -4,50 +4,48 @@
   ...
 }:
 {
-  home = {
-    username = "eien";
-    homeDirectory = "/home/eien";
-    stateVersion = "25.05";
+  home.username = "eien";
+  home.homeDirectory = "/home/eien";
+  home.stateVersion = "25.05";
 
-    packages = with pkgs; [
-      xclip
-      rofi
-      tmux
-      lf
-      fastfetch
-      stow
-      blueberry
-      flatpak
-      lazygit
-      nautilus
-      cmus
-      gimp
-      cava
-      flameshot
-      killall
-      chafa
-      bat
-      lua-language-server
-      stylua
-      vscode-langservers-extracted
-      typescript-language-server
-      vim-language-server
-      tailwindcss-language-server
-      prettierd
-      black
-      bash-language-server
-      eslint_d
-      pylint
-      vscode-extensions.denoland.vscode-deno
-      nixd
-      nixfmt-rfc-style
-      isort
-      pretty-php
-      marksman
-      emmet-language-server
-      pyright
-    ];
-  };
+  home.packages = with pkgs; [
+    xclip
+    rofi
+    tmux
+    lf
+    fastfetch
+    stow
+    blueberry
+    flatpak
+    lazygit
+    nautilus
+    cmus
+    gimp
+    cava
+    flameshot
+    killall
+    chafa
+    bat
+    lua-language-server
+    stylua
+    vscode-langservers-extracted
+    typescript-language-server
+    vim-language-server
+    tailwindcss-language-server
+    prettierd
+    black
+    bash-language-server
+    eslint_d
+    pylint
+    vscode-extensions.denoland.vscode-deno
+    nixd
+    nixfmt-rfc-style
+    isort
+    pretty-php
+    marksman
+    emmet-language-server
+    pyright
+  ];
 
   programs.bash = {
     enable = true;
@@ -59,6 +57,7 @@
       tma = "tmux attach-session";
       snvim = "sudo --preserve-env nvim";
       ls = "ls --color=auto";
+      lg = "lazygit";
       grep = "grep --color=auto";
       nrs = "sudo nixos-rebuild switch";
     };
@@ -262,16 +261,16 @@
     inactiveOpacity = 1;
     backend = "glx";
     opacityRules = [
-      "60:class_g = 'kitty' && focused"
-      "50:class_g = 'kitty' && !focused"
+      "70:class_g = 'kitty' && focused"
+      "70:class_g = 'kitty' && !focused"
     ];
     settings = {
-      "rounded-borders" = 1;
-      "corner-radius" = 12;
-      "rounded-corners-exclude" = [
-        "class_g = 'Polybar'"
-        "class_g = 'Rofi'"
-      ];
+      # "rounded-borders" = 1;
+      # "corner-radius" = 12;
+      # "rounded-corners-exclude" = [
+      #   "class_g = 'Polybar'"
+      #   "class_g = 'Rofi'"
+      # ];
       blur = {
         background = true;
         method = "dual_kawase";
