@@ -1,6 +1,8 @@
-{
-  ...
-}:
+{ config, ... }:
+let
+  dotfiles = "${config.home.homeDirectory}/dotfiles/home/configs/external";
+  create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
+in
 {
   imports = [
     ./bash.nix
@@ -13,6 +15,13 @@
     ./tmux.nix
   ];
 
-  home.file.".config/i3".source = ./external/i3;
-  home.file.".config/nvim".source = ./external/nvim;
+  xdg.configFile."i3" = {
+    source = create_symlink "${dotfiles}/i3/";
+    recursive = true;
+  };
+
+  xdg.configFile."nvim" = {
+    source = create_symlink "${dotfiles}/nvim/";
+    recursive = true;
+  };
 }
