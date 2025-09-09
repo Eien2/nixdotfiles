@@ -1,0 +1,44 @@
+{
+  pkgs,
+  ...
+}:
+{
+  home.packages = with pkgs; [
+    xclip
+    rofi
+    tmux
+    lf
+    fastfetch
+    stow
+    blueberry
+    flatpak
+    lazygit
+    nautilus
+    cmus
+    gimp
+    cava
+    flameshot
+    killall
+    chafa
+    bat
+    lua-language-server
+    stylua
+    vscode-langservers-extracted
+    typescript-language-server
+    vim-language-server
+    tailwindcss-language-server
+    prettierd
+    black
+    bash-language-server
+    eslint_d
+    pylint
+    vscode-extensions.denoland.vscode-deno
+    nixd
+    nixfmt-rfc-style
+    isort
+    pretty-php
+    marksman
+    emmet-language-server
+    pyright
+  ];
+}

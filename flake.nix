@@ -38,7 +38,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               backupFileExtension = "backup";
-              users.${user} = import ./home.nix;
+              users.${user} = import ./home/home.nix;
             };
           }
         ];
