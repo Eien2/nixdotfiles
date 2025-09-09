@@ -1,0 +1,25 @@
+{
+  pkgs,
+  ...
+}:
+{
+  home.packages = with pkgs; [
+    xclip
+    rofi
+    tmux
+    lf
+    fastfetch
+    stow
+    blueberry
+    flatpak
+    lazygit
+    nautilus
+    cmus
+    gimp
+    cava
+    flameshot
+    killall
+    chafa
+    bat
+  ];
+}

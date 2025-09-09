@@ -101,7 +101,6 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   programs.firefox.enable = true;
-  programs.i3lock.enable = true;
   programs.dconf = {
     enable = true;
     packages = [ pkgs.ibus ];

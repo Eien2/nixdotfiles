@@ -1,0 +1,19 @@
+{
+  pkgs,
+  ...
+}:
+{
+  home.packages = with pkgs; [
+    lua-language-server
+    typescript-language-server
+    vim-language-server
+    tailwindcss-language-server
+    bash-language-server
+    emmet-language-server
+    pyright
+    nixd
+    marksman
+    vscode-langservers-extracted
+    vscode-extensions.denoland.vscode-deno
+  ];
+}

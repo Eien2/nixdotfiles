@@ -7,7 +7,7 @@
   home.stateVersion = "25.05";
 
   imports = [
-    ./home-packages.nix
-    ./programs/default.nix
+    ./packages/default.nix
+    ./configs/default.nix
   ];
 }
