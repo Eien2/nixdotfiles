@@ -11,6 +11,7 @@
     fastfetch
     stow
     blueberry
+    spotify
     flatpak
     lazygit
     nautilus

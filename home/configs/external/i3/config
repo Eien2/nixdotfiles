@@ -112,8 +112,9 @@ client.unfocused        #333333 #333333 #CCCCCC #333333   #333333
 client.urgent           #333333 #333333 #CCCCCC #333333   #333333
 client.placeholder      #333333 #333333 #CCCCCC #333333   #333333
 
-gaps inner 0px
+gaps inner 12px
 gaps outer 0px
+smart_gaps on
 
 for_window [class="firefox"] title_format "firefox"
 for_window [class="kitty"] title_format "kitty"
