@@ -1,6 +1,6 @@
 { config, ... }:
 let
-  dotfiles = "${config.home.homeDirectory}/dotfiles/home/configs/external";
+  dotfiles = "${config.home.homeDirectory}/dotfiles/home/configs/";
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
 in
 {
