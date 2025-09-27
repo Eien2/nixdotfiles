@@ -12,6 +12,7 @@
     stow
     blueberry
     spotify
+    steam
     flatpak
     lazygit
     nautilus

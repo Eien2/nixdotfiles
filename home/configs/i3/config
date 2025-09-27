@@ -61,7 +61,7 @@ bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
+bindsym $mod+8 workspace $ws0
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
@@ -100,7 +100,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-exec_always feh --bg-fill $HOME/dotfiles-old/wallpaper.png
+exec_always feh --bg-fill $HOME/images/wallpapers/anime-manga/one-piece-2.jpeg
 
 exec_always killall polybar
 exec_always $HOME/.config/polybar/launch.sh 
@@ -120,7 +120,5 @@ for_window [class="firefox"] title_format "firefox"
 for_window [class="kitty"] title_format "kitty"
 default_border pixel 2
 
-exec --no-startup-id "sh -c 'sleep 3; exec firefox'"
-exec --no-startup-id kitty
 exec --no-startup-id picom -b
 exec --no-startup-id ibus-daemon -drx
