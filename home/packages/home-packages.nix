@@ -6,6 +6,7 @@
   home.packages = with pkgs; [
     xclip
     rofi
+    inkscape
     tmux
     lf
     fastfetch
