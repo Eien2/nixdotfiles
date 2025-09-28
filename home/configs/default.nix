@@ -6,11 +6,8 @@ in
 {
   imports = [
     ./bash.nix
-    ./polybar.nix
     ./fastfetch.nix
-    ./kitty.nix
     ./lf.nix
-    ./picom.nix
     ./rofi.nix
     ./tmux.nix
   ];
@@ -22,6 +19,21 @@ in
 
   xdg.configFile."nvim" = {
     source = create_symlink "${dotfiles}/nvim/";
+    recursive = true;
+  };
+
+  xdg.configFile."kitty" = {
+    source = create_symlink "${dotfiles}/kitty/";
+    recursive = true;
+  };
+
+  xdg.configFile."polybar" = {
+    source = create_symlink "${dotfiles}/polybar/";
+    recursive = true;
+  };
+
+  xdg.configFile."picom" = {
+    source = create_symlink "${dotfiles}/picom/";
     recursive = true;
   };
 }

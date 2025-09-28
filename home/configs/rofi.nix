@@ -14,6 +14,6 @@
     extraConfig = {
       drun-display-format = "{name}";
     };
-    theme = "/home/eien/.config/rofi/lackluster.rasi";
+    theme = "/home/eien/dotfiles/home/configs/rofi/lackluster.rasi";
   };
 }
