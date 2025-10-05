@@ -5,7 +5,6 @@
 {
   home.packages = with pkgs; [
     temurin-jre-bin
-    prismlauncher
     xclip
     rofi
     inkscape
