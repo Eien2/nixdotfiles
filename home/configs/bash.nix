@@ -18,7 +18,7 @@
     };
 
     initExtra = ''
-      PS1='\n\[\e[38;5;245m\]\u\[\e[38;5;253;1m\][\[\e[22m\]\w\[\e[1m\]]\[\e[0m\]'
+      PS1='\n\[\e[38;5;234m\]\u\[\e[38;5;243;1m\][\[\e[22m\]\w\[\e[1m\]]\[\e[0m\]'
       export DOT=/home/eien/dotfiles
       export DISPLAY=:0.0
       export MONITOR=DVI-D-1
