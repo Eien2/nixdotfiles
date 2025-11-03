@@ -19,8 +19,6 @@ bindsym $mod+Shift+s exec flameshot gui
 bindsym $mod+Return exec kitty
 bindsym $mod+q kill
 bindsym $mod+d exec --no-startup-id "rofi -show drun"
-bindsym $mod+w exec --no-starup-id "firefox"
-bindsym $mod+x exec --no-startup-id "kitty -e lf"
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -112,7 +110,7 @@ client.urgent           #915563 #915563 #BD284C #915563   #915563
 client.placeholder      #915563 #915563 #BD284C #915563   #915563
 
 gaps inner 12px
-gaps outer 0px
+gaps top 32px
 smart_gaps off
 
 for_window [class="firefox"] title_format "firefox"
