@@ -100,7 +100,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-exec_always feh --bg-fill $HOME/images/wallpapers/anime-manga/one-piece-2.jpeg
+exec_always feh --bg-fill $HOME/images/wallpapers/reze-wp-1.png
 
 exec_always killall polybar
 exec_always $HOME/dotfiles/home/configs/polybar/launch.sh

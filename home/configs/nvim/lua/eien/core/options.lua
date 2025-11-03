@@ -33,3 +33,5 @@ vim.g.editorconfig = true
 
 vim.o.showtabline = 2
 vim.o.tabline = "%#TabLineFill#%t"
+
+require("eien.colors.rezescheme")
