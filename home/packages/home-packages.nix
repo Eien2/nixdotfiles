@@ -5,6 +5,7 @@
 {
   home.packages = with pkgs; [
     xclip
+    jq
     rofi
     inkscape
     tmux
