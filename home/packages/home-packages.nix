@@ -4,7 +4,6 @@
 }:
 {
   home.packages = with pkgs; [
-    temurin-jre-bin
     xclip
     rofi
     inkscape
@@ -15,12 +14,10 @@
     blueberry
     spotify
     discord
-    flatpak
     lazygit
     nautilus
     cmus
     gimp
-    cava
     flameshot
     killall
     chafa
