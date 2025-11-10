@@ -102,6 +102,8 @@ exec_always feh --bg-fill $HOME/images/wallpapers/reze-wp-1.png
 
 exec_always killall polybar
 exec_always $HOME/dotfiles/home/configs/polybar/launch.sh
+exec_always killall $HOME/dotfiles/home/configs/polybar/hide-on-fullscreen.sh
+exec_always $HOME/dotfiles/home/configs/polybar/hide-on-fullscreen.sh
 
 client.focused          #BD284C #BD284C #915563 #BD284C   #BD284C
 client.focused_inactive #915563 #915563 #BD284C #915563   #915563

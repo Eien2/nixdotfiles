@@ -3,11 +3,19 @@
 i3-msg -t subscribe -m '[ "window" ]' | while read -r line; do
   container=$(echo "$line" | jq -r '.container')
   fullscreen=$(echo "$container" | jq -r '.fullscreen_mode')
+  output=$(echo "$container" | jq -r '.output')
 
-  # Upgrade it so it only shows or hide the polybar on this screen when it is fullscreened
-  if [ "$fullscreen" = '1' ]; then
-    polybar-msg cmd hide
+  if [ "$output" = 'DVI-D-0' ]; then
+    if [ "$fullscreen" = '1' ]; then
+      polybar-msg -p "$(pgrep -f 'polybar main1')" cmd hide
+    else
+      polybar-msg -p "$(pgrep -f 'polybar main1')" cmd show
+    fi
   else
-    polybar-msg cmd show
+    if [ "$fullscreen" = '1' ]; then
+      polybar-msg -p "$(pgrep -f 'polybar main2')" cmd hide
+    else
+      polybar-msg -p "$(pgrep -f 'polybar main2')" cmd show
+    fi
   fi
 done

@@ -4,6 +4,7 @@
 }:
 {
   home.packages = with pkgs; [
+    htop
     xclip
     jq
     rofi
