@@ -6,6 +6,7 @@
   home.packages = with pkgs; [
     htop
     xclip
+    fd
     jq
     rofi
     inkscape
@@ -14,11 +15,8 @@
     fastfetch
     stow
     blueberry
-    spotify
-    discord
     lazygit
     nautilus
-    cmus
     gimp
     flameshot
     killall

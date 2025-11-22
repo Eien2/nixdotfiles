@@ -1,2 +1,1 @@
-require("eien.core")
-require("eien.lazy")
+require("nix")
