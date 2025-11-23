@@ -32,9 +32,6 @@
       open = false;
       modesetting.enable = true;
     };
-    opengl = {
-      enable = true;
-    };
     graphics = {
       enable = true;
     };
