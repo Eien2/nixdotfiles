@@ -98,6 +98,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    lsof
+    ntfs3g
     vulkan-tools
     vulkan-loader
     glxinfo
