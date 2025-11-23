@@ -4,9 +4,12 @@ return {
   lazy = false,
   build = ":TSUpdate",
   opts = {
+    additional_vim_regex_highlighting = false,
     highlight = {
       enable = true,
-      additional_vim_regex_highlighting = false,
+    },
+    indent = {
+      enable = true;
     },
     ensure_installed = { "lua", "vim" },
     auto_install = true,

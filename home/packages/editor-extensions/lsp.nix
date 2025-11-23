@@ -12,7 +12,7 @@
     emmet-language-server
     pyright
     nixd
-    phpactor
+    intelphense
     yaml-language-server
     marksman
     vscode-langservers-extracted

@@ -10,9 +10,14 @@ return {
       "html",
       "cssls",
       "ts_ls",
-      "phpactor",
+      "intelphense",
       "yamlls"
     })
+
+    vim.lsp.config("html", {
+      filetypes = { "html", "templ", "php" },
+    })
+
 
     vim.diagnostic.config({
       virtual_text = true,

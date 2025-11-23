@@ -17,7 +17,7 @@ vim.o.termguicolors = true
 vim.o.winborder = "rounded"
 vim.o.clipboard = "unnamedplus"
 
-vim.o.wrap = true
+vim.o.wrap = false
 vim.o.linebreak = true
 
 vim.o.number = true

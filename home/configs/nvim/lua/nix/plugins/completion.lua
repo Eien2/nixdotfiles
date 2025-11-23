@@ -1,11 +1,22 @@
 return {
-  "nvim-mini/mini.completion",
-  version = "*",
-  dependencies = {
-    "nvim-mini/mini.icons",
-    "nvim-mini/mini.snippets",
+  "saghen/blink.cmp",
+  dependencies = { "L3MON4D3/LuaSnip", "rafamadriz/friendly-snippets" },
+
+  version = "1.*",
+  opts = {
+    keymap = { preset = "default" },
+
+    appearance = {
+      nerd_font_variant = "mono"
+    },
+
+    completion = { documentation = { auto_show = false } },
+
+    sources = {
+      default = { "lsp", "path", "snippets", "buffer" },
+    },
+
+    fuzzy = { implementation = "prefer_rust_with_warning" }
   },
-  config = function()
-    require("mini.completion").setup()
-  end
+  opts_extend = { "sources.default" }
 }
