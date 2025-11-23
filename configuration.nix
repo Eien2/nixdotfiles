@@ -18,6 +18,7 @@
     "flakes"
   ];
   virtualisation.libvirtd.enable = true;
+  virtualisation.docker.enable = true;
   programs.virt-manager.enable = true;
 
   networking = {
@@ -44,6 +45,7 @@
   users.users.${user} = {
     isNormalUser = true;
     extraGroups = [
+      "docker"
       "wheel"
       "audio"
       "libvirtd"
