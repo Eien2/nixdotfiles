@@ -7,7 +7,7 @@
 }:
 {
   imports = [
-    ./hardware-configuration.nix
+    /etc/nixos/hardware-configuration.nix
   ];
 
   time.timeZone = "Europe/Warsaw";
@@ -23,6 +23,7 @@
   networking = {
     hostName = "${hostname}";
     networkmanager.enable = true;
+    firewall.httpd.enable = true;
   };
 
   hardware = {
@@ -51,14 +52,36 @@
 
   services.blueman.enable = true;
   services.pulseaudio.enable = true;
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+
+  services.httpd = {
+    enable = true;
+    adminAddr = "oleksiak-sebastian@proton.me";
+    enablePHP = true;
+    virtualHosts = {
+      "mywebsite.com" = {
+        # forceSSL = true;
+        documentRoot = "/var/www/mywebsite.com";
+      };
+    };
+  };
+
+  services.mysql = {
+    enable = true;
+    package = pkgs.mariadb;
+  };
+
   services.openssh = {
     enable = true;
     settings.PasswordAuthentication = true;
   };
+
   services.pipewire = {
     enable = false;
     pulse.enable = true;
   };
+
   services.xserver = {
     enable = true;
     autoRepeatDelay = 200;
@@ -70,8 +93,6 @@
       "nvidia"
     ];
   };
-  services.gvfs.enable = true;
-  services.udisks2.enable = true;
 
   fonts.packages = with pkgs; [
     dejavu_fonts
