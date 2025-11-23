@@ -9,7 +9,9 @@ return {
       "jsonls",
       "html",
       "cssls",
-      "ts_ls"
+      "ts_ls",
+      "phpactor",
+      "yamlls"
     })
 
     vim.diagnostic.config({

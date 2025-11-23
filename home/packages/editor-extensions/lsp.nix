@@ -12,6 +12,8 @@
     emmet-language-server
     pyright
     nixd
+    phpactor
+    yaml-language-server
     marksman
     vscode-langservers-extracted
     vscode-extensions.denoland.vscode-deno
