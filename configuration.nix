@@ -23,7 +23,10 @@
   networking = {
     hostName = "${hostname}";
     networkmanager.enable = true;
-    firewall.httpd.enable = true;
+    firewall.allowedTCPPorts = [
+      80
+      443
+    ];
   };
 
   hardware = {
