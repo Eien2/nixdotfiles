@@ -98,7 +98,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-exec_always feh --bg-fill $HOME/images/wallpapers/reze-wp-1.png
+exec_always feh --bg-fill $HOME/dotfiles/wallpaper.jpg
 
 exec_always killall polybar
 exec_always $HOME/dotfiles/home/configs/polybar/launch.sh
