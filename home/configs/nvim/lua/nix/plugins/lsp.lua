@@ -10,7 +10,7 @@ return {
       "html",
       "cssls",
       "ts_ls",
-      "intelphense",
+      "intelephense",
       "yamlls"
     })
 

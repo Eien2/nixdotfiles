@@ -12,7 +12,7 @@
     emmet-language-server
     pyright
     nixd
-    intelphense
+    intelephense
     yaml-language-server
     marksman
     vscode-langservers-extracted
