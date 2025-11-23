@@ -5,6 +5,7 @@
 {
   home.packages = with pkgs; [
     p7zip
+    docker
     htop
     xclip
     fd

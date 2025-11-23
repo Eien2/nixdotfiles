@@ -14,7 +14,7 @@
       ls = "ls --color=auto";
       lg = "lazygit";
       grep = "grep --color=auto";
-      nrsf = "sudo nixos-rebuild switch --flake ~/dotfiles#nixos";
+      nrsf = "sudo nixos-rebuild switch --flake ~/dotfiles#nixos --impure";
     };
 
     initExtra = ''
