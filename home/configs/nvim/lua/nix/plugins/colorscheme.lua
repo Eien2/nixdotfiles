@@ -1,8 +1,8 @@
 return {
-  "vague-theme/vague.nvim",
+  "ficd0/ashen.nvim",
   lazy = false,
   priority = 1000,
   config = function()
-    vim.cmd("colorscheme vague")
+    vim.cmd("colorscheme ashen")
   end
 }
