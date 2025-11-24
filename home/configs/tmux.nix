@@ -26,13 +26,13 @@
       bind-key C-l resize-pane -R 5
 
       set-option -g status-position top
-      set -g status-bg "#191919"
-      set -g status-fg "#AAAAAA"
+      set -g status-bg "#121212"
+      set -g status-fg "#e5e5e5"
       set -g status-right ""
       set -g status-left-length 170
       set -g status-left "[#S] "
-      set -g window-status-format "#[fg=#555555] #W"
-      set -g window-status-current-format "#[fg=#708090] #W"
+      set -g window-status-format "#[fg=#D87C4A] #W"
+      set -g window-status-current-format "#[fg=#C53030] #W"
 
       set -g allow-passthrough on
       set -g @resurrect-processes 'lazygit nvim snvim lf cmus'
