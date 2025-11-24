@@ -23,4 +23,10 @@ vim.o.linebreak = true
 vim.o.number = true
 vim.o.signcolumn = "yes"
 
-vim.cmd(":hi statusline guibg=NONE")
+
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    vim.cmd("hi StatusLine guibg=NONE ctermbg=NONE")
+    vim.cmd("hi StatusLineNC guibg=NONE ctermbg=NONE")
+  end
+})
