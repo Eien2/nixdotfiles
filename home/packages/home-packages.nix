@@ -4,6 +4,8 @@
 }:
 {
   home.packages = with pkgs; [
+    nodejs
+    tree-sitter
     p7zip
     docker
     htop
