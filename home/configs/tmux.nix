@@ -36,7 +36,7 @@
 
       set -g @resurrect-dir '$HOME/.tmux/resurrect'
       set -g allow-passthrough on
-      set -g @resurrect-processes 'lazygit "nvim" snvim lf cmus'
+      set -g @resurrect-processes 'lazygit "~nvim" snvim lf cmus'
       set -g @resurrect-capture-pane-contents 'on'
       set -g @continuum-restore 'on'
       set -g @continuum-save-interval '1'

@@ -25,6 +25,10 @@
       export EDITOR=neovim
       export TERM=xterm-kitty
       export PATH="$HOME/bin:$PATH"
+
+      function nvim_tmux_resurrect {
+        exec nvim "$@"
+      }
     '';
   };
 }
