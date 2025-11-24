@@ -34,6 +34,8 @@
       set -g window-status-format "#[fg=#DF6464] #W"
       set -g window-status-current-format "#[fg=#C53030] #W"
 
+      set -g @resurrect-strategy-vim 'session'
+      set -g @resurrect-strategy-nvim 'session'
       set -g allow-passthrough on
       set -g @resurrect-processes 'lazygit nvim snvim lf cmus'
       set -g @resurrect-capture-pane-contents 'on'
