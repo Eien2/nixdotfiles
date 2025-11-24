@@ -34,6 +34,10 @@
       set -g window-status-format "#[fg=#DF6464] #W"
       set -g window-status-current-format "#[fg=#C53030] #W"
 
+      set -g @resurrect-hook-post-save-all '
+        target="$HOME/.tmux/resurrect/last";
+        sed -i -E "s|.*/nvim --cmd.*|nvim|g" "$target"
+      '
       set -g @resurrect-dir '$HOME/.tmux/resurrect'
       set -g allow-passthrough on
       set -g @resurrect-processes 'lazygit "~nvim" snvim lf cmus'
