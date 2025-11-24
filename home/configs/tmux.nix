@@ -15,6 +15,7 @@
       continuum
     ];
     extraConfig = ''
+      resurrect_dir="$HOME/.tmux/resurrect"
       bind r source-file ~/.config/tmux/tmux.conf
       bind-key h select-pane -L
       bind-key j select-pane -D
@@ -36,8 +37,10 @@
 
       set -g @resurrect-strategy-vim 'session'
       set -g @resurrect-strategy-nvim 'session'
+      set -g @resurrect-dir $resurrect_dir
+      set -g @resurrect-hook-post-save-all "sed -i 's/--cmd lua.*--cmd set packpath/--cmd \"lua/g; s/--cmd set rtp.*\$/\"/' $resurrect_dir/last"
       set -g allow-passthrough on
-      set -g @resurrect-processes 'lazygit nvim snvim lf cmus'
+      set -g @resurrect-processes 'lazygit "~nvim" snvim lf cmus'
       set -g @resurrect-capture-pane-contents 'on'
       set -g @continuum-restore 'on'
       set -g @continuum-save-interval '1'
