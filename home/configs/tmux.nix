@@ -28,9 +28,8 @@
       set-option -g status-position top
       set -g status-bg "#121212"
       set -g status-fg "#D87C4A"
-      set -g status-right ""
+      set -g status-right "[#S] "
       set -g status-left-length 170
-      set -g status-left "[#S] "
       set -g window-status-format "#[fg=#DF6464] #W"
       set -g window-status-current-format "#[fg=#C53030] #W"
 
