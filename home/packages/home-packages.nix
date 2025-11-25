@@ -4,6 +4,7 @@
 }:
 {
   home.packages = with pkgs; [
+    flatpak
     nodejs
     tree-sitter
     p7zip
