@@ -62,7 +62,7 @@
   services.flatpak.enable = true;
 
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ "xdg-desktop-portal-gtk" ];
+  xdg.portal.extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
 
   systemd.services.flatpak-repo = {
     wantedBy = [ "multi-user.target" ];
