@@ -63,6 +63,7 @@
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+  xdg.portal.config.common.default = "*";
 
   systemd.services.flatpak-repo = {
     wantedBy = [ "multi-user.target" ];
@@ -158,7 +159,6 @@
     ripgrep
     gnumake
     python314
-    python314Packages.pip
     go
   ];
 
