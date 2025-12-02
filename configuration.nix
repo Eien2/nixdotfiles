@@ -160,6 +160,7 @@
     gnumake
     python314
     python3Packages.pip
+    python3Packages.gdata
     go
   ];
 
