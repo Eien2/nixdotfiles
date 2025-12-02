@@ -158,6 +158,7 @@
     ripgrep
     gnumake
     python314
+    python314Packages.pip
     go
   ];
 
