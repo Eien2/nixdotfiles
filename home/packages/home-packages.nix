@@ -25,6 +25,7 @@
     gimp
     flameshot
     killall
+    spotify
     chafa
     bat
   ];
