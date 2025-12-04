@@ -1,0 +1,20 @@
+{
+  ...
+}:
+{
+  imports = [
+    ./audio.nix
+    ./bluetooth.nix
+    ./boot.nix
+    ./fonts.nix
+    ./flatpak.nix
+    ./graphics.nix
+    ./locales.nix
+    ./network.nix
+    ./ssh.nix
+    ./system-packages.nix
+    ./user.nix
+    ./virutalisation.nix
+    ./xserver.nix
+  ];
+}
