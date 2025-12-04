@@ -26,6 +26,7 @@
     flameshot
     killall
     spotify
+    live-server
     chafa
     bat
   ];
