@@ -8,6 +8,8 @@
     nodejs
     tree-sitter
     p7zip
+    xwinwrap
+    mpv
     docker
     htop
     xclip
