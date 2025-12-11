@@ -8,7 +8,7 @@
     autoRepeatInterval = 35;
     windowManager.i3.enable = true;
     xkb.layout = "pl";
-    xkbVariant = "pl";
+    xkb.variant = "pl";
     xkb.options = "grp:alt_shift_toggle";
     videoDrivers = [
       "nvidia"
