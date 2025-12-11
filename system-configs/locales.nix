@@ -3,5 +3,5 @@
 }:
 {
   time.timeZone = "Europe/Warsaw";
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "pl_PL.UTF-8";
 }
