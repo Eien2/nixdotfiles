@@ -4,6 +4,7 @@
 }:
 {
   home.packages = with pkgs; [
+    xdotool
     flatpak
     nodejs
     tree-sitter
