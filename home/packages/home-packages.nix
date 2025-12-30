@@ -4,6 +4,7 @@
 }:
 {
   home.packages = with pkgs; [
+    xhosts
     xdotool
     flatpak
     nodejs
