@@ -6,6 +6,7 @@
   programs.firefox.enable = true;
 
   environment.systemPackages = with pkgs; [
+    xorg.xhost
     lsof
     ntfs3g
     vulkan-tools
